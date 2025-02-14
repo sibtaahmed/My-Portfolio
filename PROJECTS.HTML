@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll to Top Button</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Optional custom styles */
+    .scroll-to-top {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  
+  <!-- Your page content goes here -->
+  <div class="container mx-auto px-4 py-8">
+    <!-- Your content here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat tincidunt mauris, at convallis nisl aliquam ac. Integer lobortis rutrum magna, at commodo velit scelerisque quis. Vivamus accumsan enim vel felis ullamcorper, et elementum orci congue.</p>
+    <!-- Scroll to top button -->
+    <button id="scrollToTop" class="scroll-to-top bg-blue-500 text-white px-4 py-2 rounded shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out">Scroll to Top</button>
+  </div>
+
+  <!-- JavaScript for smooth scrolling -->
+  <script>
+    const scrollToTopButton = document.getElementById('scrollToTop');
+
+    // Show or hide the scroll button based on scroll position
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopButton.style.display = 'block';
+      } else {
+        scrollToTopButton.style.display = 'none';
+      }
+    });
+
+    // Smooth scroll to top when button is clicked
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
